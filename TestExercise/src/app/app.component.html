@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <div class="contain">
+    <div class="wrapper">
+      <div class="contacts">
+        <h3>Contacts List</h3>
+  
+        <ul *ngFor= "let item of contacts">
+          <li>{{item.firstName}} {{item.lastName}}</li>
+          <li>{{item.phone}}</li>
+          <span class="fa fa-pencil edit" (click)= "onEditAction(item)" title="Edit"></span>
+            <span class="fa fa-trash trash" (click)= "onDeleteAction(item.id)" title="Delete"></span>        
+          <br>
+        </ul>
+      </div>
+  
+      <div class="form">
+        <h3>Contact</h3>
+        <form action="">
+          <p>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="firstName">
+          </p>
+          <p>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="lastName">
+          </p>
+          <p>
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" placeholder="Phone Number" [(ngModel)]="phone">
+          </p>
+          <p class="full-width">
+            <button (click)="onAddEmployeeAction()">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
